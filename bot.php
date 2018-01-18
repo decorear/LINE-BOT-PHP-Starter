@@ -3,7 +3,6 @@ $access_token = 'oKQWl/XURFKCVIgvIUQ+Y/Kc8tFJxIWH8wlZp2B7vzBW0uBSb+Q+brh2gnzYuPz
 
 // Get POST body content
 $content = file_get_contents('php://input');
-echo $content;
 
 // Parse JSON
 $events = json_decode($content, true);
@@ -42,7 +41,13 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
+			
+			
+			$url = "https://api.bitfinex.com/v1/ticker/btcusd";
+			$json = json_decode(file_get_contents($url), true);
+			$price = $json["last_price"];
 			echo $result . "\r\n";
+			echo $price;
 		}
 	}
 }
