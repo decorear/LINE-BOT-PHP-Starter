@@ -1,7 +1,7 @@
 <?php
 
 // example: https://github.com/onlinetuts/line-bot-api/blob/master/php/example/chapter-01.php
-
+echo "I am a cryptobot";
 include ('line-bot-api/php/line-bot.php');
 
 $channelSecret = '6b134f677d24fc7fec476c02a78702c1';
@@ -24,3 +24,4 @@ if (!empty($bot->isEvents)) {
 	exit();
 
 }
+?>
